@@ -1,4 +1,5 @@
 import express, { Application, Request, Response } from "express";
+import "dotenv/config";
 import prisma from "./config/prisma";
 import { identify } from "./controllers/identity.controllers";
 

@@ -1,6 +1,6 @@
 import prisma from "../config/prisma";
 import { Request, Response } from "express";
-import { Contact, LinkPrecedence } from "../generated/prisma";
+import { Contact, LinkPrecedence } from "../generated/prisma/client";
 
 /*
   Cases handled:
