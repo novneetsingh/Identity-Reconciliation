@@ -9,7 +9,7 @@ app.use(express.json());
 (async () => {
   try {
     await prisma.$connect();
-    console.log("✅ Database connection successful");
+    console.log("✅ Database connection successfull");
   } catch (error) {
     console.error("❌ Database connection failed");
     console.error(error);
