@@ -4,6 +4,7 @@
     // File Layout
     // "rootDir": "./src",
     "outDir": "./dist",
+    "baseUrl": ".",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -40,5 +41,9 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
     "esModuleInterop": true
-  }
+  },
+  "include": [
+    "**/*",
+    "generated/**/*"
+  ]
 }
