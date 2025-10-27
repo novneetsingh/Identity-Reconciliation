@@ -75,7 +75,7 @@ export const identify = async (req: Request, res: Response) => {
 
     const otherPrimaryContactIds: number[] = allPrimaryContacts
       .slice(1)
-      .map((c) => c.id);
+      .map((c: Contact) => c.id);
 
     // If we have more than one primary, we need to merge (Case 4️⃣)
     if (otherPrimaryContactIds.length > 0) {
@@ -117,12 +117,13 @@ export const identify = async (req: Request, res: Response) => {
 
     // Check if the *information* is new to the group
     const hasNewEmail =
-      email && !allRelatedContacts.some((contact) => contact.email === email);
+      email &&
+      !allRelatedContacts.some((contact: Contact) => contact.email === email);
 
     const hasNewPhone =
       phoneNumber &&
       !allRelatedContacts.some(
-        (contact) => contact.phoneNumber === phoneNumber
+        (contact: Contact) => contact.phoneNumber === phoneNumber
       );
 
     let finalContactsList = allRelatedContacts;
@@ -133,7 +134,7 @@ export const identify = async (req: Request, res: Response) => {
     if (hasNewEmail || hasNewPhone) {
       // Check if this specific combination already exists
       const combinationExists = allRelatedContacts.some(
-        (contact) =>
+        (contact: Contact) =>
           contact.email === email && contact.phoneNumber === phoneNumber
       );
 
